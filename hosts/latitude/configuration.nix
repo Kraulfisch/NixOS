@@ -34,8 +34,6 @@
   environment.systemPackages = with pkgs; [
 	vim
 	wget
-	git
-	brave
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

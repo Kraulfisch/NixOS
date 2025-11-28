@@ -7,31 +7,14 @@
   
   imports = [
 	../../modules/users/git/default.nix
+	../../modules/users/brave/default.nix
   ];
-  home.packages = [
   
-  ];
+  modules.home = {
+	git = { enable = true; userName = "Raoul"; userEmail = "raoul.sidler@gmx.ch"; };
+	brave.enable = true;	
+  };
 
-  home.file = {
- 
-  };
-  
-  modules.home.git = {
-	enable = true;
-	userName = "Raoul";
-	userEmail = "raoul.sidler@gmx.ch";
-  };
 	
-  home.sessionVariables = {
- 
-  };
-	
-  programs.bash = {
-	enable = true;
-	shellAliases = 
-	{
-		ll = "ls -l";
-	};
-  };
   programs.home-manager.enable = true;
 }
