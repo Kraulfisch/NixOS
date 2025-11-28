@@ -1,5 +1,5 @@
 { config, lib, pkgs, ... }:
-
+THIS SHOUDL FAIL MISERABLY
 let
 	cfg = config.modules.home.brave;
 in 
