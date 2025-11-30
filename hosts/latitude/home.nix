@@ -9,11 +9,13 @@
   imports = [
 	../../modules/users/git/default.nix
 	../../modules/users/brave/default.nix
+	../../modules/users/bitwarden/default.nix
   ];
   
   modules.home = {
 	git = { enable = true; userName = "Raoul"; userEmail = "raoul.sidler@gmx.ch"; };
-	brave.enable = true;	
+	brave.enable = true;
+	bitwarden.enable = true;	
   };
 
 	
