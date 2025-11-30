@@ -1,27 +1,18 @@
 { config, lib, pkgs, ... }:
 let
-	cfg = config.modules.home.vscode;
+	cfg = config.modules.home.bitwarden;
 in 
 {
 	options = {
-		modules.home.vscode = {
-			enable = lib.mkEnableOption "Enable VS Code";
+		modules.home.bitwarden = {
+			enable = lib.mkEnableOption "Enable bitwarden";
 		};
 	};
 	
 	config = lib.mkIf cfg.enable {
-		programs.vscode {
-			enable = true;
-			package = pkgs.vscode;
-
-			extensions  = with pkgs.vscode-extensions; [
-
-			];
-
-			userSettings = {
-				"workbench.colorTheme" = "Default Dark+";
-			};
-		};	
+		home.packages = [
+			pkgs.bitwarden-desktop
+		];
 	};
 }
 	

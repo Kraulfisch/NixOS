@@ -12,6 +12,7 @@
  
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
+  nixpkgs.config.allowUnfree = true;
 
   networking.hostName = "nixos-btw";
   # Pick only one of the below networking options.
