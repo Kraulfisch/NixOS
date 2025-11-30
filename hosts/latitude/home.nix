@@ -10,12 +10,14 @@
 	../../modules/users/git/default.nix
 	../../modules/users/brave/default.nix
 	../../modules/users/bitwarden/default.nix
+	../../modules/users/vscode/default.nix
   ];
   
   modules.home = {
 	git = { enable = true; userName = "Raoul"; userEmail = "raoul.sidler@gmx.ch"; };
 	brave.enable = true;
-	bitwarden.enable = true;	
+	bitwarden.enable = true;
+	vscode.enable = true;
   };
 
 	
