@@ -1,10 +1,11 @@
 { config, pkgs, ... }:
-
 {
   home.username = "raoul";
   home.homeDirectory = "/home/raoul";
-  home.stateVersion = "25.11"; 
-  
+  home.stateVersion = "24.11"; 
+ 
+  programs.home-manager.enable = true;
+ 
   imports = [
 	../../modules/users/git/default.nix
 	../../modules/users/brave/default.nix
@@ -16,5 +17,4 @@
   };
 
 	
-  programs.home-manager.enable = true;
 }

@@ -28,15 +28,11 @@ in
 		programs.git = {
 			enable = true;
 			lfs.enable = true;
-		
-			settings = {
-				user = {
-					name = cfg.userName;
-					email = cfg.userEmail;
-				};
-				init = {
-					defaultBranch = "main";
-				};
+			userName = cfg.userName;
+			userEmail = cfg.userEmail;
+	  
+			extraConfig = {
+	    			init.defaultBranch = "main";
 			};
 		};	
 	};
