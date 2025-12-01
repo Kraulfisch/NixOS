@@ -11,6 +11,10 @@
 	../../modules/users/brave/default.nix
 	../../modules/users/bitwarden/default.nix
 	../../modules/users/vscode/default.nix
+	../../modules/users/geary/default.nix
+  	../../modules/users/docker/default.nix
+	../../modules/users/discord/default.nix
+	../../modules/users/claude/default.nix
   ];
   
   modules.home = {
@@ -18,6 +22,10 @@
 	brave.enable = true;
 	bitwarden.enable = true;
 	vscode.enable = true;
+	geary.enable = true;
+	docker.enable = true;
+	discord.enable = true;
+	# claude.enable = true;
   };
 
 	
