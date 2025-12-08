@@ -23,7 +23,7 @@
         modules = [
           # 2. Your Host Config
           ./hosts/latitude/configuration.nix
-
+	  
           # 3. The Bridge: Import Home Manager module
           home-manager.nixosModules.home-manager
           {

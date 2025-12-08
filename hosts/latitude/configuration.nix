@@ -7,6 +7,8 @@
 	./hardware-configuration.nix
 	../../modules/system/gnome/default.nix
 	../../modules/system/keyboard/default.nix
+	../../modules/system/core-tools/default.nix
+	../../modules/system/docker/default.nix
     ];
 
  
@@ -29,8 +31,13 @@
     ];
   };
 
-  modules.system.keyboard.enable = true;
-  modules.system.gnome.enable = true;
+  modules.system = {
+	keyboard.enable = true;
+	gnome.enable = true;
+	core-tools.enable = true;
+	docker.enable = true;
+  };
+
 
   environment.systemPackages = with pkgs; [
 	vim
