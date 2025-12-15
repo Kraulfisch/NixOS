@@ -9,6 +9,10 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+  hardware.enableAllFirmware = true;
+
+
   # Timezone
   time.timeZone = "Europe/Amsterdam";
 
@@ -19,14 +23,11 @@
     extraGroups = [ "wheel" ]; 
     packages = with pkgs; [ tree ];
   };
-
-  # HIER ist der saubere Teil:
-  # Wir aktivieren nur noch die Module. Woher die kommen,
-  # regelt die Flake via modules/system/default.nix.
   modules.system = {
     keyboard.enable = true;
     gnome.enable = true;
     maintenance.enable = true;
+#    logitech.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
