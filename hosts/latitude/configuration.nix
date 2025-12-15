@@ -5,6 +5,7 @@
   imports =
     [ 
 	./hardware-configuration.nix
+	../../modules/system/cosmic/default.nix
 	../../modules/system/gnome/default.nix
 	../../modules/system/keyboard/default.nix
     ];
@@ -29,8 +30,24 @@
     ];
   };
 
+<<<<<<< Updated upstream
   modules.system.keyboard.enable = true;
   modules.system.gnome.enable = true;
+=======
+  modules.system = {
+	keyboard.enable = true;
+	gnome.enable = true;
+	cosmic.enable = false;
+	core-tools.enable = true;
+	docker.enable = true;
+  };
+
+  nix.gc = {
+	automatic = true;
+	dates = "weekly";
+	options = "--delete-older-than 7d";
+  };
+>>>>>>> Stashed changes
 
   environment.systemPackages = with pkgs; [
 	vim
