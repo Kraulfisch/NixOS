@@ -1,11 +1,11 @@
-{ config, lib, pkgs, ... } 
+{ config, lib, pkgs, ... }: 
 
 let
 	cfg = config.modules.system.maintenance;
 in
 {
 	options.modules.system.maintenance = {
-		enable = lib.mkEnableOption = "Enable Maintenance";
+		enable = lib.mkEnableOption "Enable Maintenance";
 	};
 
 	config = lib.mkIf cfg.enable {
