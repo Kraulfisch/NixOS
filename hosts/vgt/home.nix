@@ -13,8 +13,11 @@
 	vscode.enable = true;
 	geary.enable = true;
 	discord.enable = true;
-	# claude.enable = true;
+	neovim.enable = true;
+	ghostty.enable = true;
+
   };
+
 
 	
 }
