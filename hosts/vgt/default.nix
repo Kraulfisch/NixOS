@@ -26,6 +26,7 @@
   modules.system = {
     keyboard.enable = true;
     gnome.enable = true;
+    maintenance.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
