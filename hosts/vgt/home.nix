@@ -11,7 +11,6 @@
 	brave.enable = true;
 	bitwarden.enable = true;
 	vscode.enable = true;
-	geary.enable = true;
 	discord.enable = true;
 	neovim.enable = true;
 	ghostty.enable = true;
