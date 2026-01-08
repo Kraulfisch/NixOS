@@ -34,6 +34,9 @@
     wget
   ];
 
+  environment.sessionVariables = {
+	GTK_IM_MODULE = "simple";
+  };
   # Experimental features (Flakes) sind immer gut
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
