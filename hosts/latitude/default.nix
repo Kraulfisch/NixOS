@@ -27,12 +27,8 @@
     keyboard.enable = true;
     gnome.enable = true;
     maintenance.enable = true;
+    core-tools.enable = true;
   };
-
-  environment.systemPackages = with pkgs; [
-    vim
-    wget
-  ];
 
   # Experimental features (Flakes) sind immer gut
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

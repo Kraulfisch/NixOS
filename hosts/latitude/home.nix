@@ -15,6 +15,11 @@
 	discord.enable = true;
 	neovim.enable = true;
 	ghostty.enable = true;
+	geogebra.enable = true;
+	
+	dev = {
+		c.enable = true;
+	};
 
   };
 
