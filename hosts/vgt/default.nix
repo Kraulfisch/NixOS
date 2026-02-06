@@ -27,6 +27,8 @@
     keyboard.enable = true;
     gnome.enable = true;
     maintenance.enable = true;
+    openwebui.enable = true;
+    ollama.enable = true;
 #    logitech.enable = true;
   };
 
