@@ -12,7 +12,6 @@ in
                 # This must be at the system level to create the 'ollama' daemon
                 services.ollama = {
                         enable = true;
-                        acceleration = null; # Change to "cuda" if you have Nvidia
                 };
 
                 # Ensures the service exists but doesn't start at boot
