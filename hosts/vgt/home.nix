@@ -24,6 +24,10 @@
 	};
   };
 
+  home.file."vgt" = {
+	source = config.lib.file.mkOutOfStoreSymlink "/run/user/1000/gvfs/onedrive:host=vgt.energy,user=raoul.sidler";
+  };
+
   dconf.settings = {
 	"org/gnome/mutter" = {
 		experimental-features = [ "scale-monitor-framebuffer" ];
