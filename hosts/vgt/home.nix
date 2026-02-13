@@ -15,6 +15,13 @@
 	neovim.enable = true;
 	ghostty.enable = true;
 	spotify.enable = true;
+
+
+	# DEV
+	dev = {
+		c.enable = true;
+		python.enable = true;
+	};
   };
 
   dconf.settings = {
