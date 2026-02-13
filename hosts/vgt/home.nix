@@ -14,6 +14,7 @@
 	discord.enable = true;
 	neovim.enable = true;
 	ghostty.enable = true;
+	spotify.enable = true;
   };
 
   dconf.settings = {
