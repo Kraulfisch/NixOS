@@ -13,7 +13,7 @@
 	vscode.enable = true;
 	geary.enable = true;
 	discord.enable = true;
-	neovim.enable = true;
+	nvim.enable = true;
 	ghostty.enable = true;
 	geogebra.enable = true;
 	

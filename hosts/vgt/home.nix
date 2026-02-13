@@ -19,7 +19,9 @@
                 discord.enable = true;
                 neovim.enable = true;
                 ghostty.enable = true;
+		libreoffice.enable = true;
                 spotify.enable = true;
+		claude.enable = true;
 
                 # DEV
                 dev = {
