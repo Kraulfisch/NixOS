@@ -13,10 +13,17 @@ in
         config = mkIf cfg.enable {
                 home.packages = with pkgs; [
                         (python3.withPackages (ps: with ps; [
-                                pip
                                 requests
                                 setuptools
                         ]))
                 ];
+
+		programs.direnv = {
+			enable = true;
+			nix-direnv.enable = true;
+		};
+
+		programs.bash.enable = true;
+		programs.zsh.enable = true;
         };
 }
