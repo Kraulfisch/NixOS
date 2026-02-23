@@ -12,6 +12,12 @@
   boot.kernelPackages = pkgs.linuxPackages_latest;
   hardware.enableAllFirmware = true;
 
+  # Fix HDMI not waking from standby (Intel Arc Graphics)
+  boot.kernelParams = [
+    "i915.enable_psr=0"           # Disable Panel Self Refresh
+    "i915.enable_fbc=0"           # Disable framebuffer compression
+  ];
+
 
   # Timezone
   time.timeZone = "Europe/Amsterdam";
@@ -30,6 +36,7 @@
     openwebui.enable = true;
     ollama.enable = true;
 #    logitech.enable = true;
+    display-fix.enable = true;  # Uncomment if kernel params alone don't fix it
   };
 
   environment.systemPackages = with pkgs; [
