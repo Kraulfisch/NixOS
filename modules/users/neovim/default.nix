@@ -20,6 +20,9 @@ in
 			vimAlias = true;
 
 			plugins = with pkgs.vimPlugins; [
+				# Colorscheme
+				catppuccin-nvim
+
 				# Treesitter for syntax highlighting
 				nvim-treesitter.withAllGrammars
 
@@ -29,14 +32,6 @@ in
 				# Autocompletion
 				nvim-cmp
 				cmp-nvim-lsp
-				cmp-buffer
-				cmp-path
-				cmp-cmdline
-
-				# Snippets
-				luasnip
-				cmp_luasnip
-				friendly-snippets
 			];
 
 			extraLuaConfig = ''
@@ -47,6 +42,26 @@ in
                                 vim.opt.softtabstop = 8
                                 vim.opt.clipboard = "unnamedplus"
 				vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
+				vim.opt.termguicolors = true
+
+				-- Colorscheme
+				require("catppuccin").setup({
+					flavour = "mocha",
+					color_overrides = {
+						mocha = {
+							base = "#1e1e2e",
+							mantle = "#181825",
+							crust = "#11111b",
+						},
+					},
+					integrations = {
+						treesitter = true,
+						native_lsp = {
+							enabled = true,
+						},
+					},
+				})
+				vim.cmd.colorscheme("catppuccin")
 
 				-- Treesitter configuration
 				require('nvim-treesitter.configs').setup {
@@ -99,17 +114,8 @@ in
 
 				-- Autocompletion setup
 				local cmp = require('cmp')
-				local luasnip = require('luasnip')
-
-				-- Load friendly-snippets
-				require('luasnip.loaders.from_vscode').lazy_load()
 
 				cmp.setup({
-					snippet = {
-						expand = function(args)
-							luasnip.lsp_expand(args.body)
-						end,
-					},
 					mapping = cmp.mapping.preset.insert({
 						['<C-b>'] = cmp.mapping.scroll_docs(-4),
 						['<C-f>'] = cmp.mapping.scroll_docs(4),
@@ -119,8 +125,6 @@ in
 						['<Tab>'] = cmp.mapping(function(fallback)
 							if cmp.visible() then
 								cmp.select_next_item()
-							elseif luasnip.expand_or_jumpable() then
-								luasnip.expand_or_jump()
 							else
 								fallback()
 							end
@@ -128,19 +132,20 @@ in
 						['<S-Tab>'] = cmp.mapping(function(fallback)
 							if cmp.visible() then
 								cmp.select_prev_item()
-							elseif luasnip.jumpable(-1) then
-								luasnip.jump(-1)
 							else
 								fallback()
 							end
 						end, { 'i', 's' }),
 					}),
 					sources = cmp.config.sources({
-						{ name = 'nvim_lsp' },
-						{ name = 'luasnip' },
-						{ name = 'buffer' },
-						{ name = 'path' },
-					})
+						{
+							name = 'nvim_lsp',
+							max_item_count = 10
+						},
+					}),
+					performance = {
+						max_view_entries = 10
+					}
 				})
 			'';
 		};
