@@ -22,6 +22,7 @@
 		libreoffice.enable = true;
                 spotify.enable = true;
 		claude.enable = true;
+		zotero.enable = true;
 
                 # DEV
                 dev = {
