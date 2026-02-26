@@ -43,6 +43,9 @@
     wget
   ];
 
+  # Disable ibus input method (conflicts with simple IM)
+  i18n.inputMethod.enable = false;
+
   environment.sessionVariables = {
 	GTK_IM_MODULE = "simple";
   };

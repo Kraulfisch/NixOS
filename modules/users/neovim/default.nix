@@ -34,7 +34,7 @@ in
 				cmp-nvim-lsp
 			];
 
-			extraLuaConfig = ''
+			initLua = ''
 				-- Basic settings
 				vim.opt.number = true
 				vim.opt.shiftwidth = 8

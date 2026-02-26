@@ -19,7 +19,7 @@ in
 		console.useXkbConfig = true;
 
 		environment.sessionVariables = {
-			GTK_IM_MODULES= "simple";
+			GTK_IM_MODULE = "simple";
 		};
 	};
 }
