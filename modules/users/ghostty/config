@@ -1,1 +1,2 @@
-keybind = shift+enter=text:\u001b[13;2u
+keybind = shift+enter=text:\x1b
+keybind = ctrl+t=new_tab

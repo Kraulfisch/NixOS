@@ -15,24 +15,19 @@ in
 			pkgs.pyright  # Python language server
 		];
 
+		# Deliver plugins via packpath - programs.neovim.plugins doesn't
+		# generate plugin paths in the wrapper with useUserPackages = true
+		xdg.dataFile = with pkgs.vimPlugins; {
+			"nvim/site/pack/nix/start/catppuccin-nvim".source = catppuccin-nvim;
+			"nvim/site/pack/nix/start/nvim-treesitter".source = nvim-treesitter.withAllGrammars;
+			"nvim/site/pack/nix/start/nvim-lspconfig".source = nvim-lspconfig;
+			"nvim/site/pack/nix/start/nvim-cmp".source = nvim-cmp;
+			"nvim/site/pack/nix/start/cmp-nvim-lsp".source = cmp-nvim-lsp;
+		};
+
 		programs.neovim = {
 			enable = true;
 			vimAlias = true;
-
-			plugins = with pkgs.vimPlugins; [
-				# Colorscheme
-				catppuccin-nvim
-
-				# Treesitter for syntax highlighting
-				nvim-treesitter.withAllGrammars
-
-				# LSP Support
-				nvim-lspconfig
-
-				# Autocompletion
-				nvim-cmp
-				cmp-nvim-lsp
-			];
 
 			initLua = ''
 				-- Basic settings
@@ -63,16 +58,13 @@ in
 				})
 				vim.cmd.colorscheme("catppuccin")
 
-				-- Treesitter configuration
-				require('nvim-treesitter.configs').setup {
-					highlight = {
-						enable = true,
-						additional_vim_regex_highlighting = false,
-					},
-					indent = {
-						enable = true,
-					},
-				}
+				-- Treesitter configuration (nvim-treesitter v1 API)
+				vim.api.nvim_create_autocmd('FileType', {
+					callback = function(args)
+						pcall(vim.treesitter.start, args.buf)
+					end,
+				})
+				vim.opt.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
 				-- LSP configuration
 				local capabilities = require('cmp_nvim_lsp').default_capabilities()
