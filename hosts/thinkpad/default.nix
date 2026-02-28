@@ -9,10 +9,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  boot.kernelPackages = pkgs.linuxPackages_latest;
-  hardware.enableAllFirmware = true;
-
-
   # Timezone
   time.timeZone = "Europe/Amsterdam";
 
@@ -23,22 +19,24 @@
     extraGroups = [ "wheel" ]; 
     packages = with pkgs; [ tree ];
   };
+
+  # HIER ist der saubere Teil:
+  # Wir aktivieren nur noch die Module. Woher die kommen,
+  # regelt die Flake via modules/system/default.nix.
   modules.system = {
     keyboard.enable = true;
     gnome.enable = true;
     maintenance.enable = true;
-    openwebui.enable = true;
-    ollama.enable = true;
-#    logitech.enable = true;
+    core-tools.enable = true;
+    trackpad.enable = true;
+    printing.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
     wget
   ];
 
-  environment.sessionVariables = {
-	GTK_IM_MODULE = "simple";
-  };
+
   # Experimental features (Flakes) sind immer gut
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 

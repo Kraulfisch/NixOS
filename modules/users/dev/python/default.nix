@@ -30,7 +30,18 @@ in
 			'';	
 		};
 
-		programs.bash.enable = true;
-		programs.zsh.enable = true;
+		programs.bash = {
+			enable = true;
+			shellAliases = {
+				init-python = ''echo "layout python3" > .envrc && direnv allow'';
+			};
+		};
+
+		programs.zsh = {
+			enable = true;
+			shellAliases = {
+				init-python = ''echo "layout python3" > .envrc && direnv allow'';
+			};
+		};
         };
 }

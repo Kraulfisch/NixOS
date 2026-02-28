@@ -7,13 +7,13 @@
   programs.home-manager.enable = true;
   
   modules.home = {
-	git = { enable = true; userName = "Raoul"; userEmail = "raoul.sidler@vgt.energy"; };
+	git = { enable = true; userName = "Raoul"; userEmail = "raoul.sidler@gmx.ch"; };
 	brave.enable = true;
 	bitwarden.enable = true;
 	vscode.enable = true;
 	geary.enable = true;
 	discord.enable = true;
-	nvim.enable = true;
+	#nvim.enable = true;
 	ghostty.enable = true;
 	geogebra.enable = true;
 	

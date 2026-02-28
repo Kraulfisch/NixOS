@@ -28,6 +28,7 @@
     gnome.enable = true;
     maintenance.enable = true;
     core-tools.enable = true;
+    printing.enable = true;
   };
 
   # Experimental features (Flakes) sind immer gut
