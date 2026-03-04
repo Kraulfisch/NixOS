@@ -23,6 +23,7 @@
 
 	dev = {
 		c.enable = true;
+		android-studio.enable = true;
 	};
 
   };
