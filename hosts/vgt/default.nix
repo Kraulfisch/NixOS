@@ -34,6 +34,7 @@
     gnome.enable = true;
     maintenance.enable = true;
     openwebui.enable = true;
+    docker.enable = true;
     ollama.enable = true;
 #    logitech.enable = true;
     display-fix.enable = true;  # Uncomment if kernel params alone don't fix it
