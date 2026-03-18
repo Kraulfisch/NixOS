@@ -28,6 +28,7 @@
                 dev = {
                         c.enable = true;
                         python.enable = true;
+			bun.enable = true;
                 };
         };
 
