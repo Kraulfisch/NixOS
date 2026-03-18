@@ -29,6 +29,7 @@
                         c.enable = true;
                         python.enable = true;
 			bun.enable = true;
+			node-js.enable = true;
                 };
         };
 
