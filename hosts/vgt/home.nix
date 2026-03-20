@@ -14,6 +14,7 @@
                         userEmail = "raoul.sidler@vgt.energy";
                 };
                 brave.enable = true;
+		bruno.enable = true;
                 bitwarden.enable = true;
                 vscode.enable = true;
                 discord.enable = true;
