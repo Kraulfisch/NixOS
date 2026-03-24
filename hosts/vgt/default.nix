@@ -26,7 +26,7 @@
   # Home Manager kümmert sich um die Apps, aber der User muss existieren
   users.users.raoul = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; 
+    extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [ tree ];
   };
   modules.system = {
@@ -38,6 +38,7 @@
     ollama.enable = true;
 #    logitech.enable = true;
     display-fix.enable = true;  # Uncomment if kernel params alone don't fix it
+    vpn.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
