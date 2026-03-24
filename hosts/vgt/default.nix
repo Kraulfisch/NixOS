@@ -30,6 +30,7 @@
     packages = with pkgs; [ tree ];
   };
   modules.system = {
+    core-tools.enable = true;
     keyboard.enable = true;
     gnome.enable = true;
     maintenance.enable = true;
