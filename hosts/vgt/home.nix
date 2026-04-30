@@ -43,14 +43,5 @@
                         experimental-features = [ "scale-monitor-framebuffer" ];
                 };
 
-                "org/gnome/settings-daemon/plugins/power" = {
-                        sleep-inactive-ac-timeout = 0;
-                        sleep-inactive-battery-timeout = 0;
-                        idle-dim = false;
-                };
-
-                "org/gnome/desktop/session" = {
-                        idle-delay = 0;
-                };
         };
 }
