@@ -23,6 +23,7 @@
 		libreoffice.enable = true;
                 spotify.enable = true;
 		claude.enable = true;
+		codex.enable = true;
 		zotero.enable = true;
 
                 # DEV
