@@ -32,6 +32,7 @@
                         python.enable = true;
 			bun.enable = true;
 			nodejs.enable = true;
+			dotnet.enable = true;
                 };
         };
 
