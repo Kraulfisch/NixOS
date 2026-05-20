@@ -19,7 +19,7 @@
   # Home Manager kümmert sich um die Apps, aber der User muss existieren
   users.users.raoul = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "plugdev" ];
     packages = with pkgs; [ tree ];
   };
   modules.system = {

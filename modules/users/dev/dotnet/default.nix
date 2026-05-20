@@ -18,7 +18,8 @@ in
 		# the CLI home to a mutable user directory. After rebuilding, run:
 		#   dotnet workload install wasm-tools
 		home.sessionVariables = {
-			DOTNET_CLI_HOME = "$HOME/.dotnet";
+			DOTNET_ROOT = "$HOME/.local/share/dotnet";
+			PATH = "$HOME/.local/share/dotnet:$PATH";
 		};
 	};
 }

@@ -25,6 +25,7 @@
 		claude.enable = true;
 		codex.enable = true;
 		zotero.enable = true;
+		via.enable = true;
 
                 # DEV
                 dev = {
