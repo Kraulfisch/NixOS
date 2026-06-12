@@ -11,7 +11,7 @@ in
 
 	config = lib.mkIf cfg.enable {
 		home.packages = with pkgs; [
-			dotnet-sdk_9
+			dotnet-sdk_10
 		];
 
 		# Workloads (e.g. wasm-tools) can't write to /nix/store, so point

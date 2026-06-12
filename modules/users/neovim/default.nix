@@ -13,6 +13,7 @@ in
 		home.packages = [
 			pkgs.wl-clipboard
 			pkgs.pyright  # Python language server
+			pkgs.csharp-ls  # C# language server
 		];
 
 		# Deliver plugins via packpath - programs.neovim.plugins doesn't
@@ -88,6 +89,15 @@ in
 				}
 
 				vim.lsp.enable('pyright')
+
+				-- C# LSP (csharp-ls)
+				vim.lsp.config['csharp_ls'] = {
+					cmd = { 'csharp-ls' },
+					filetypes = { 'cs' },
+					root_markers = { '*.sln', '*.csproj', '.git' },
+					capabilities = capabilities,
+				}
+				vim.lsp.enable('csharp_ls')
 
 				-- LSP keybindings
 				vim.api.nvim_create_autocmd('LspAttach', {
