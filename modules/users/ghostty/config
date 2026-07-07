@@ -1,2 +1,2 @@
-keybind = shift+enter=text:\x1b
 keybind = ctrl+t=new_tab
+keybind = shift+enter=\n
