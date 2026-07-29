@@ -37,6 +37,7 @@
 			dotnet.enable = true;
 			kind.enable = true;
 			argocd.enable = true;
+			kubectl.enable = true;
                 };
         };
 
