@@ -45,13 +45,6 @@
   environment.sessionVariables = {
 	GTK_IM_MODULE = "simple";
   };
-  # GDM monitor config — keeps Samsung at 60Hz on login screen
-  environment.etc."monitors.xml".source = ./monitors.xml;
-
-  systemd.tmpfiles.rules = [
-    "d /run/gdm/.config 0711 gdm gdm"
-    "C+ /run/gdm/.config/monitors.xml - gdm gdm - /etc/monitors.xml"
-  ];
 
   # Experimental features (Flakes) sind immer gut
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

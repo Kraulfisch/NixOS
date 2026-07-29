@@ -26,6 +26,7 @@
 		codex.enable = true;
 		zotero.enable = true;
 		via.enable = true;
+		headlamp.enable = true;
 
                 # DEV
                 dev = {
@@ -34,6 +35,8 @@
 			bun.enable = true;
 			nodejs.enable = true;
 			dotnet.enable = true;
+			kind.enable = true;
+			argocd.enable = true;
                 };
         };
 
