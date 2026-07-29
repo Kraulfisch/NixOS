@@ -14,7 +14,7 @@ in
                 environment.systemPackages = with pkgs; [
                         zip
                         unzip
-			neofetch
+			fastfetch
                ];
         };
 }
