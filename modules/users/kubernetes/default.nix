@@ -11,9 +11,8 @@ in
 
 	config = lib.mkIf cfg.enable {
 		home.packages = [
-			(lib.hiPrio pkgs.kubectl)
+			pkgs.kubectl
 			pkgs.kind
-			pkgs.minikube
 			pkgs.headlamp
 		];
 	};
