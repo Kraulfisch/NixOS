@@ -14,6 +14,7 @@ in
 			pkgs.kubectl
 			pkgs.kind
 			pkgs.headlamp
+			pkgs.argocd
 		];
 	};
 }
