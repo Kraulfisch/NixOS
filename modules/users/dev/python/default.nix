@@ -27,7 +27,9 @@ in
 				direnv_layout_dir() {
 				        echo "''${XDG_CACHE_HOME}/direnv/layouts/$(pwd | sha1sum | cut -d' ' -f1)"
 				}
-			'';	
+
+				export LD_LIBRARY_PATH="${makeLibraryPath [ pkgs.stdenv.cc.cc.lib pkgs.zlib ]}:''${LD_LIBRARY_PATH:-}"
+			'';
 		};
 
 		programs.bash = {

@@ -7,6 +7,7 @@ vim.opt.clipboard = "unnamedplus"
 vim.opt.completeopt = {'menu', 'menuone', 'noselect'}
 vim.opt.termguicolors = true
 vim.opt.foldmethod = "indent"
+vim.opt.foldlevelstart = 99
 
 -- Colorscheme
 require("catppuccin").setup({
