@@ -8,42 +8,13 @@ in
 {
         options.modules.home.dev.python = {
                 enable = mkEnableOption "Python development environment";
+		# for libaries, the system module nix-ld is probably needed
+		# install python directly via uv
         };
 
         config = mkIf cfg.enable {
                 home.packages = with pkgs; [
-                        (python3.withPackages (ps: with ps; [
-                                requests
-                                setuptools
-                        ]))
+                        uv
                 ];
-
-		programs.direnv = {
-			enable = true;
-			nix-direnv.enable = true;
-			stdlib = ''
-				: ''${XDG_CACHE_HOME:=$HOME/.cache}
-				declare -A direnv_layout_dirs
-				direnv_layout_dir() {
-				        echo "''${XDG_CACHE_HOME}/direnv/layouts/$(pwd | sha1sum | cut -d' ' -f1)"
-				}
-
-				export LD_LIBRARY_PATH="${makeLibraryPath [ pkgs.stdenv.cc.cc.lib pkgs.zlib ]}:''${LD_LIBRARY_PATH:-}"
-			'';
-		};
-
-		programs.bash = {
-			enable = true;
-			shellAliases = {
-				init-python = ''echo "layout python3" > .envrc && direnv allow'';
-			};
-		};
-
-		programs.zsh = {
-			enable = true;
-			shellAliases = {
-				init-python = ''echo "layout python3" > .envrc && direnv allow'';
-			};
-		};
         };
 }
