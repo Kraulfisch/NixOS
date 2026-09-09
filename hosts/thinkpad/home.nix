@@ -18,12 +18,13 @@
 	ghostty.enable = true;
 	geogebra.enable = true;
 	blender.enable = true;
-	dev.python.enable = true;
+	zotero.enable = true;
 
 
 	dev = {
 		c.enable = true;
 		android-studio.enable = true;
+		python.enable = true;
 	};
 
   };
