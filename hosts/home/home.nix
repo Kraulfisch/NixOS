@@ -1,0 +1,53 @@
+{ config, pkgs, ... }:
+
+{
+        home.username = "raoul";
+        home.homeDirectory = "/home/raoul";
+        home.stateVersion = "24.11"; 
+
+        programs.home-manager.enable = true;
+
+        modules.home = {
+                git = {
+                        enable = true;
+                        userName = "Raoul";
+                        userEmail = "raoul.sidler@vgt.energy";
+                };
+                brave.enable = true;
+		bruno.enable = true;
+                bitwarden.enable = true;
+                vscode.enable = true;
+                discord.enable = true;
+                neovim.enable = true;
+                ghostty.enable = true;
+		libreoffice.enable = true;
+                spotify.enable = true;
+		claude.enable = true;
+		codex.enable = true;
+		zotero.enable = true;
+		via.enable = true;
+		kubernetes.enable = true;
+		lunar-client.enable = true;
+
+                # DEV
+                dev = {
+                        c.enable = true;
+                        python.enable = true;
+			bun.enable = true;
+			nodejs.enable = true;
+			dotnet.enable = true;
+			argocd.enable = true;
+                };
+        };
+
+        home.file."vgt" = {
+                source = config.lib.file.mkOutOfStoreSymlink "/run/user/1000/gvfs/onedrive:host=vgt.energy,user=raoul.sidler";
+        };
+
+        dconf.settings = {
+                "org/gnome/mutter" = {
+                        experimental-features = [ "scale-monitor-framebuffer" ];
+                };
+
+        };
+}
