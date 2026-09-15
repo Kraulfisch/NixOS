@@ -28,6 +28,7 @@
 		via.enable = true;
 		kubernetes.enable = true;
 		lunar-client.enable = true;
+		prismlauncher.enable = true;
 
                 # DEV
                 dev = {

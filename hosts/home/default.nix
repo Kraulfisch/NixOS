@@ -43,6 +43,7 @@
     ollama.enable = true;
 #    logitech.enable = true;
     vpn.enable = true;
+    netbird.enable = true;
     network-tools.enable = true;
     nix-ld.enable = true;
   };
