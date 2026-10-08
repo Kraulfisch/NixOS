@@ -58,10 +58,10 @@ vim.lsp.config.pyright = {
 	-- Point pyright at the project's uv venv (.venv/bin/python), since it
 	-- won't auto-discover it and otherwise falls back to whatever `python3`
 	-- is on $PATH.
-	on_new_config = function(new_config, new_root_dir)
-		local venv_python = new_root_dir .. '/.venv/bin/python'
+	before_init = function(_, config)
+		local venv_python = config.root_dir .. '/.venv/bin/python'
 		if vim.fn.executable(venv_python) == 1 then
-			new_config.settings.python.pythonPath = venv_python
+			config.settings.python.pythonPath = venv_python
 		end
 	end,
 }

@@ -15,6 +15,7 @@ in
         config = mkIf cfg.enable {
                 home.packages = with pkgs; [
                         uv
+			python3 # natively linked, only used for different processes
                 ];
         };
 }
