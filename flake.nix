@@ -6,6 +6,9 @@
 
                 home-manager.url = "github:nix-community/home-manager";
                 home-manager.inputs.nixpkgs.follows = "nixpkgs";
+		
+		disko.url = "github:nix-community/disko";
+		disko.inputs.nixpks.follows = "nixpkgs";
         };
 
         outputs = { self, nixpkgs, home-manager, ... }@inputs:

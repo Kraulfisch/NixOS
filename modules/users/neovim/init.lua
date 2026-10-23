@@ -36,6 +36,11 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 vim.opt.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
 
+-- Markdown
+require('render-markdown').setup({
+	file_types = { 'markdown' },
+})
+
 -- LSP configuration
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
