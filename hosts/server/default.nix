@@ -17,7 +17,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE8lzfP2kfpHKTNeRthtM+gr/YBgDPL9VI8UA03A6gmd raoul.sidler@gmx.ch"
+      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIE8lzfP2kfpHKTNeRthtM+gr/YBgDPL9VI8UA03A6gmd raoul@home"
     ];
   };
 
