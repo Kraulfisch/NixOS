@@ -9,6 +9,13 @@ vim.opt.termguicolors = true
 vim.opt.foldmethod = "indent"
 vim.opt.foldlevelstart = 99
 
+-- Keymaps
+-- jj leaves insert mode
+vim.keymap.set('i', 'jj', '<Esc>')
+
+-- :Q opens the netrw directory view (same as :Ex)
+vim.api.nvim_create_user_command('Q', 'Explore', {})
+
 -- Colorscheme
 require("catppuccin").setup({
 	flavour = "mocha",
