@@ -8,7 +8,7 @@
                 home-manager.inputs.nixpkgs.follows = "nixpkgs";
 		
 		disko.url = "github:nix-community/disko";
-		disko.inputs.nixpks.follows = "nixpkgs";
+		disko.inputs.nixpkgs.follows = "nixpkgs";
         };
 
         outputs = { self, nixpkgs, home-manager, ... }@inputs:

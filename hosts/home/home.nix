@@ -24,7 +24,7 @@
                 spotify.enable = true;
 		claude.enable = true;
 		codex.enable = true;
-		zotero.enable = true;
+#		zotero.enable = true;
 		via.enable = true;
 		gimp.enable = true;
 		kubernetes.enable = true;
