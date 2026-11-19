@@ -26,11 +26,14 @@
 		codex.enable = true;
 		zotero.enable = true;
 		via.enable = true;
+		gimp.enable = true;
 		kubernetes.enable = true;
+
+		# Gaming
 		lunar-client.enable = true;
 		prismlauncher.enable = true;
-
-                # DEV
+		steam.enable = true;
+                # Dev
                 dev = {
                         c.enable = true;
                         python.enable = true;

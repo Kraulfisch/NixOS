@@ -24,6 +24,8 @@ in
 			"nvim/site/pack/nix/start/nvim-lspconfig".source = nvim-lspconfig;
 			"nvim/site/pack/nix/start/nvim-cmp".source = nvim-cmp;
 			"nvim/site/pack/nix/start/cmp-nvim-lsp".source = cmp-nvim-lsp;
+			"nvim/site/pack/nix/start/render-markdown-nvim".source = render-markdown-nvim;
+			"nvim/site/pack/nix/start/nvim-web-devicons".source = nvim-web-devicons;
 		};
 
 		programs.neovim = {
